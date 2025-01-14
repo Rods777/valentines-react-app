@@ -1,4 +1,3 @@
-import './App.css'
 import {Routes, Route} from "react-router-dom"
 import { NavBar } from './components/NavBar'
 import { Home } from "./pages/Home"
@@ -7,7 +6,7 @@ export default function App() {
 
   return (
     <>
-       <NavBar/>
+      <NavBar/>
       <div className='main-content'>
         {/* Defines Different Routing */}
         <Routes>
