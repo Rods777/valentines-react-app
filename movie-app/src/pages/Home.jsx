@@ -35,7 +35,7 @@ export function Home(){
                 {movies.map(
                     (movie) => (
                         // Displays the search movie, else display all the movies
-                        // Uses Conditional Rendering
+                        // Uses Conditional Rendering for search
                         movie.title.toLowerCase().startsWith(searchQuery) && 
                         <MovieCard movie={movie} key={movie.id}/>
                 ))}
