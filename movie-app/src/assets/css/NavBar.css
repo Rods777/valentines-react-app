@@ -1,0 +1,85 @@
+.navbar {
+    background-color: #d6604d;
+    padding: 1rem 2rem;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-brand-logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.navbar-logo-movie {
+    color: black;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-link {
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-link:hover {
+    color: black;
+}
+
+.menu-bar-container{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .menu-bar-container {
+        display: block;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #4d4d4d;
+        padding: 20px 0px;
+        width: 100%;
+        z-index: 1000;
+
+        /* Hidden state */
+        opacity: 0; 
+        overflow: hidden; 
+        pointer-events: none; /* Disable clicks if not visible */
+        transition: all 0.3s ease-in-out; 
+    }
+
+    #check:checked ~ .navbar-links {
+        /* Visible state */
+        opacity: 1; 
+        pointer-events: auto;
+    }
+}
