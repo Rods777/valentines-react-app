@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { MovieCard } from "../components/MovieCard";
+import { FaSearch } from "react-icons/fa";
+import "../assets/css/Home.css"
 
 // Home page of the Movie Vault
 
@@ -19,15 +21,18 @@ export function Home(){
 
     return (
         <div className="home">
-            <form onSubmit={searchMovie} className="search-form">
-                <input 
-                    type="text"
-                    placeholder="Search for movies..."
-                    className="search-input"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)} // enables the search field (search state) to edit
-                />
-                <button type="submit" className="search-button">Search</button>
+            <form onSubmit={searchMovie} className="search-container">
+                <div className="search-form">
+                    <FaSearch className="search-icon"/>
+                    <input 
+                        type="text"
+                        placeholder="Search for movies..."
+                        className="search-input"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)} // enables the search field (search state) to edit
+                    />
+                </div>
+                
             </form>
 
             <div className="movies-container">
