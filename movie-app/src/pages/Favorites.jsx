@@ -1,3 +1,6 @@
+import "../assets/css/Favorites.css"
+
+
 export function Favorites(){
     return (
         <div className="favorites-empty">

@@ -1,5 +1,6 @@
-// Movie Card Component
+import "../assets/css/MovieCard.css"
 
+// Movie Card Component
 export function MovieCard({ movie }){
 
     function addToFavorites(){
