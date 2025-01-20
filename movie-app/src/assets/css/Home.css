@@ -62,3 +62,8 @@
     gap: 1.5rem;
     padding: 1rem;
 }
+
+.loading {
+    color: white;
+    text-align: center;
+}
