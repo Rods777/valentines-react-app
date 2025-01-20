@@ -6,7 +6,7 @@ export function NavBar(){
     return (
         <nav className="navbar">
             <input type="checkbox" id="check"/>
-            <label className="menu-bar-container" for="check">
+            <label className="menu-bar-container" htmlFor="check">
                 <FaBars className="menu-bar"/>
             </label>
             
