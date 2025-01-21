@@ -1,4 +1,5 @@
 import "../assets/css/MovieCard.css"
+import { FaHeart } from "react-icons/fa";
 
 // Movie Card Component
 export function MovieCard({ movie }){
@@ -43,7 +44,7 @@ export function MovieCard({ movie }){
             <div className="movie-poster">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
                 <div className="movie-overlay">
-                    <button className="favorite-btn" onClick={addToFavorites}>♥</button>
+                    <button className="favorite-btn" onClick={addToFavorites}><FaHeart /></button>
                 </div>
             </div>
             <div className="movie-info">
