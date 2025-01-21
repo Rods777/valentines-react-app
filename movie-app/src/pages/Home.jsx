@@ -13,7 +13,7 @@ export function Home(){
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // retrieves and load the popular movies ONCE
+        // retrieves and load the popular movies from api ONCE
         const loadPopularMovies = async() => {
             try{
                 const popularMovies = await getPopularMovies();
@@ -29,9 +29,22 @@ export function Home(){
         loadPopularMovies();
     }, []); // The [] is called dependency. If it's empty, the useEffect will run once
 
-    function searchMovie(event){
+    async function searchMovie(event){
+        // search and display
         event.preventDefault() // Prevents the components to re-render/load
-        setSearchQuery("") // Make the search field empty after searching
+        if(!searchQuery.trim()) return
+
+        setLoading(true)
+        try{
+            const searchResults = await searchForMovies(searchQuery);
+            setMovies(searchResults);
+            setError(null);
+        } catch (err){
+            console.error(err);
+            setError("Failed to load movies...")
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -47,6 +60,7 @@ export function Home(){
                         onChange={(e) => setSearchQuery(e.target.value)} // enables the search field (search state) to edit
                     />
                 </div>
+                <button type="submit" className="search-btn">Search</button>
                 
             </form>
 
