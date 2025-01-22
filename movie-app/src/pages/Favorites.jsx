@@ -13,7 +13,7 @@ export function Favorites(){
              {/* Conditional Rendering whenever there is a favorites or none */}
             {favorites.length > 0 ? (
                 <div className="favorites">
-                    <h2>Favorites</h2>
+                    <h2>My Favorites</h2>
                     <form className="search-container">
                         <div className="search-form">
                             <FaSearch className="search-icon"/>
