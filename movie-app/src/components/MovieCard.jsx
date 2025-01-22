@@ -1,8 +1,11 @@
 import "../assets/css/MovieCard.css"
 import { FaHeart } from "react-icons/fa";
+import { useMovieContext } from "../contexts/MovieContext"
 
 // Movie Card Component
 export function MovieCard({ movie }){
+    const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+    const favorite = isFavorite(movie.id);
 
     // Genres for movies
     const genreMap = {
@@ -34,8 +37,11 @@ export function MovieCard({ movie }){
         ))
     }
 
-    function addToFavorites(){
+    function onFavoriteClick(e){
         // adds movie to favorites
+        e.preventDefault();
+        if(favorite) removeFromFavorites(movie.id);
+        else addToFavorites(movie);
     }
 
     
@@ -44,7 +50,7 @@ export function MovieCard({ movie }){
             <div className="movie-poster">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
                 <div className="movie-overlay">
-                    <button className="favorite-btn" onClick={addToFavorites}><FaHeart /></button>
+                    <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={onFavoriteClick}><FaHeart /></button>
                 </div>
             </div>
             <div className="movie-info">
