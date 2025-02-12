@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'ShortStack';
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'ShortStack';
+  src: url("./assets/ShortStack-Regular.otf");
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100svh;
+  color: rgb(60, 60, 60);
+  background-color: rgb(248, 211, 200);
+  justify-content: center;
+  align-items: center;
+}
+
+.mail img {
+  margin-top: -200px;
+}
+
+.mail-hover {
+  animation: shake .2s infinite;
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+}
+
+.heart {
+  position: absolute;
+  transform: translateY(65%);
+  animation: flyup 3s forwards;
+}
+
+@keyframes flyup {
+  100% {
+    transform: translateY(-400%);
+  }
 }

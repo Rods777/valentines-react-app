@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import './App.css'
+import { Mail } from './components/Mail'
 
 function App() {
 
   return (
     <>
-     
+      <Mail/>
     </>
   )
 }
