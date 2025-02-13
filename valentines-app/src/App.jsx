@@ -1,10 +1,16 @@
 import { Mail } from './components/Mail'
+import { useAppContext } from './contexts/AppContext'
+import { Accepted } from './components/Accepted';
 
 function App() {
+  const { isYes } = useAppContext();
 
   return (
     <>
-      <Mail/>
+      {!isYes ? 
+        <Mail/> 
+        : 
+        <Accepted/>}
     </>
   )
 }

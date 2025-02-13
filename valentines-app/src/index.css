@@ -13,7 +13,7 @@
 body {
   display: flex;
   width: 100%;
-  min-height: 100svh;
+  min-height: 100vh;
   color: rgb(60, 60, 60);
   background-color: rgb(248, 211, 200);
   justify-content: center;
@@ -47,4 +47,42 @@ body {
   100% {
     transform: translateY(-400%);
   }
+}
+
+.letter {
+  border: solid rgb(60, 60, 60) 5px;
+  background-color: rgb(253, 247, 241);
+  width: 80%;
+  top: 13%;
+  animation: show-letter 1s ease-in;
+}
+
+@media (max-width: 450px) {
+  .letter{
+    top: 8%;
+  }
+}
+
+@keyframes show-letter {
+  0% {
+    position: hidden;
+    opacity: 0;
+  }
+
+  100%{
+    position: absolute;
+    opacity: 1;
+  }
+}
+
+.yes-no button {
+  border: solid rgb(60, 60, 60) 3px;
+}
+
+.yes {
+  background-color: rgb(203, 255, 168);
+}
+
+.no {
+  background-color: rgb(253, 190, 190);
 }

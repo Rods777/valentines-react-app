@@ -2,6 +2,7 @@ import { useState } from "react";
 import mailClose from "../assets/mail_closed.png";
 import mailOpen from "../assets/mail_opened.png";
 import heart from "../assets/heart.png";
+import { Letter } from "./Letter";
 
 export const Mail = () => {
   const [mailImg, setMailImg] = useState(mailClose);
@@ -14,7 +15,7 @@ export const Mail = () => {
   return (
     <>
       {/* Mail */}
-      <div className="mail flex flex-col items-center gap-5 relative">
+      <div className="mail flex flex-col items-center gap-5">
         <img
           width={500}
           alt="Mail"
@@ -32,6 +33,7 @@ export const Mail = () => {
           width={200}
           className={`heart ${mailImg === mailClose ? "hidden" : "absolute"}`}
         />
+        <Letter showLetter={mailImg === mailClose ? "hidden" : "absolute"}/>
       </div>
     </>
   );
